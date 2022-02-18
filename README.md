@@ -1,0 +1,2 @@
+# Centennials-IQ-test
+Team Centennials will be doing Random Shape Memorization (7) from the ProjectInstructions.pdf. There will be 4 shapes shown on the screen. Each will be highlighted in a pattern that the user must memorize and click the shapes in the same order highlighted. We will also include at least one side feature from the ProjectInstructions.pdf. We intend to follow the MVC Model to split up the work equally among 3 members of the team and 1 member will act as the project manager.
