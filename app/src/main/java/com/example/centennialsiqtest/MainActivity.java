@@ -18,4 +18,8 @@ public class MainActivity extends AppCompatActivity {
         Intent gamescreen = new Intent(this, GameActivity.class);
         startActivity(gamescreen);
     }
+    public void instc(View view){
+        Intent instscreen = new Intent(this, Instructions.class);
+        startActivity(instscreen);
+    }
 }
