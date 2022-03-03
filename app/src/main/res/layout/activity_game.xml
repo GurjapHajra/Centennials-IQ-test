@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity">
+
+    <TextView
+        android:id="@+id/GameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Centennials IQ Test"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/CurrentScoret"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/HighScoret"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="High Score: 9"
+        app:layout_constraintEnd_toStartOf="@+id/CurrentScoret"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GameTitle" />
+
+    <TextView
+        android:id="@+id/CurrentScoret"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="Current Score: 5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/HighScoret"
+        app:layout_constraintTop_toBottomOf="@+id/GameTitle" />
+
+    <Button
+        android:id="@+id/Shape1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Circle"
+        app:layout_constraintEnd_toStartOf="@+id/Shape2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="223dp" />
+
+    <Button
+        android:id="@+id/Shape2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Triangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Shape1"
+        tools:layout_editor_absoluteY="223dp" />
+
+    <Button
+        android:id="@+id/Shape4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Star"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Shape3"
+        tools:layout_editor_absoluteY="344dp" />
+
+    <Button
+        android:id="@+id/Shape3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Square"
+        app:layout_constraintEnd_toStartOf="@+id/Shape4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="344dp" />
+
+    <Button
+        android:id="@+id/Repeatb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Repeat Pattern"
+        app:layout_constraintEnd_toStartOf="@+id/Instb"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="555dp" />
+
+    <Button
+        android:id="@+id/Instb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Instructions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Repeatb"
+        tools:layout_editor_absoluteY="555dp" />
+
+    <Button
+        android:id="@+id/Stockb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stock"
+        app:layout_constraintEnd_toStartOf="@+id/Backb"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="634dp" />
+
+    <Button
+        android:id="@+id/Backb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Stockb"
+        tools:layout_editor_absoluteY="634dp" />
+
+    <TextView
+        android:id="@+id/StockInfo"
+        android:layout_width="232dp"
+        android:layout_height="124dp"
+        android:text="Stocks: \n jasdlfkj\n jasdlfkj\n jasdlfkj\n jasdlfkj\n jasdlfkj"
+        android:textAlignment="center"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="93dp"
+        tools:layout_editor_absoluteY="411dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
