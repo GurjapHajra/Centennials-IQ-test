@@ -103,6 +103,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Instructions"
+        android:onClick="instructionsc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Repeatb"
@@ -114,6 +115,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Stock"
+        android:onClick="stockc"
         app:layout_constraintEnd_toStartOf="@+id/Backb"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,6 +127,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Back"
+        android:onClick="backc"
+        android:clickable="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Stockb"
@@ -136,9 +140,11 @@
         android:layout_height="124dp"
         android:layout_marginTop="32dp"
         android:text="Stocks: \n jasdlfkj\n jasdlfkj\n jasdlfkj\n jasdlfkj\n jasdlfkj"
+        android:onClick="stockinfob"
         android:textAlignment="center"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Shape3" />
+        app:layout_constraintTop_toBottomOf="@+id/Shape3"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
