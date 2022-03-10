@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Centennials IQ test</string>
+
+    <string-array name= "schemes">
+        <item>Basic</item>
+        <item>Scheme1</item>
+        <item>Scheme2</item>
+    </string-array>
 </resources>
