@@ -42,49 +42,50 @@
         app:layout_constraintStart_toEndOf="@+id/HighScoret"
         app:layout_constraintTop_toBottomOf="@+id/GameTitle" />
 
-    <Button
-        android:id="@+id/Shape1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Circle"
-        app:layout_constraintEnd_toStartOf="@+id/Shape2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HighScoret" />
-
-    <Button
+    <ImageView
         android:id="@+id/Shape2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Triangle"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Shape1"
-        app:layout_constraintTop_toBottomOf="@+id/CurrentScoret" />
+        app:layout_constraintTop_toBottomOf="@+id/CurrentScoret"
+        tools:srcCompat="@tools:sample/avatars" />
 
-    <Button
+
+    <ImageView
+        android:id="@+id/Shape1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/Shape2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HighScoret"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
         android:id="@+id/Shape4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Star"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Shape3"
-        app:layout_constraintTop_toBottomOf="@+id/Shape2" />
+        app:layout_constraintTop_toBottomOf="@+id/Shape2"
+        tools:srcCompat="@tools:sample/avatars" />
 
-    <Button
+    <ImageView
         android:id="@+id/Shape3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Square"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toStartOf="@+id/Shape4"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Shape1" />
+        app:layout_constraintTop_toBottomOf="@+id/Shape1"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <Button
         android:id="@+id/Repeatb"
@@ -102,8 +103,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Instructions"
         android:onClick="instructionsc"
+        android:text="Instructions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Repeatb"
@@ -114,8 +115,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Stock"
         android:onClick="stockc"
+        android:text="Stock"
         app:layout_constraintEnd_toStartOf="@+id/Backb"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -126,9 +127,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Back"
-        android:onClick="backc"
         android:clickable="false"
+        android:onClick="backc"
+        android:text="Back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Stockb"
@@ -139,12 +140,13 @@
         android:layout_width="232dp"
         android:layout_height="124dp"
         android:layout_marginTop="32dp"
-        android:text="Stocks: \n jasdlfkj\n jasdlfkj\n jasdlfkj\n jasdlfkj\n jasdlfkj"
         android:onClick="stockinfob"
+        android:text="Stocks: \n jasdlfkj\n jasdlfkj\n jasdlfkj\n jasdlfkj\n jasdlfkj"
         android:textAlignment="center"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Shape3"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/Shape3" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

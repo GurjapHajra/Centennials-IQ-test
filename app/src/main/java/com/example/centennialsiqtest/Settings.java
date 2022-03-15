@@ -24,7 +24,6 @@ public class Settings extends AppCompatActivity {
 
     }
     public void backd(View view){
-        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(i);
+        finish();
     }
 }

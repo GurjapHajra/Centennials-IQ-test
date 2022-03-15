@@ -17,8 +17,7 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
     }
     public void backc(View view){
-        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(i);
+        finish();
     }
     public void instructionsc(View view){
         Intent i = new Intent(getApplicationContext(), Instructions.class);
