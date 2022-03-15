@@ -26,4 +26,7 @@ public class MainActivity extends AppCompatActivity {
         Intent settscreen = new Intent(this, Settings.class);
         startActivity(settscreen);
     }
+    public void quitc(View view){
+        finish();
+    }
 }
