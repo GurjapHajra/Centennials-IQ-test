@@ -42,55 +42,55 @@
         app:layout_constraintStart_toEndOf="@+id/HighScoret"
         app:layout_constraintTop_toBottomOf="@+id/GameTitle" />
 
-    <Button
+    <ImageView
         android:id="@+id/Shape1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Circle"
         app:layout_constraintEnd_toStartOf="@+id/Shape2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HighScoret" />
+        app:layout_constraintTop_toBottomOf="@+id/HighScoret"
+        tools:srcCompat="@tools:sample/avatars" />
 
-    <Button
+    <ImageView
         android:id="@+id/Shape2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Triangle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Shape1"
-        app:layout_constraintTop_toBottomOf="@+id/CurrentScoret" />
+        app:layout_constraintTop_toBottomOf="@+id/CurrentScoret"
+        tools:srcCompat="@tools:sample/avatars" />
 
-    <Button
+    <ImageView
         android:id="@+id/Shape4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Star"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Shape3"
-        app:layout_constraintTop_toBottomOf="@+id/Shape2" />
+        app:layout_constraintTop_toBottomOf="@+id/Shape2"
+        tools:srcCompat="@tools:sample/avatars" />
 
-    <Button
+    <ImageView
         android:id="@+id/Shape3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Square"
         app:layout_constraintEnd_toStartOf="@+id/Shape4"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Shape1" />
+        app:layout_constraintTop_toBottomOf="@+id/Shape1"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <Button
         android:id="@+id/Repeatb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:text="Repeat Pattern"
         app:layout_constraintEnd_toStartOf="@+id/Instb"
         app:layout_constraintHorizontal_bias="0.5"
@@ -101,9 +101,9 @@
         android:id="@+id/Instb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Instructions"
+        android:layout_marginTop="20dp"
         android:onClick="instructionsc"
+        android:text="Instructions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Repeatb"
@@ -138,13 +138,13 @@
         android:id="@+id/StockInfo"
         android:layout_width="232dp"
         android:layout_height="124dp"
-        android:layout_marginTop="32dp"
-        android:text="Stocks: \n jasdlfkj\n jasdlfkj\n jasdlfkj\n jasdlfkj\n jasdlfkj"
+        android:layout_marginTop="20dp"
         android:onClick="stockinfob"
+        android:text="Stocks: \n jasdlfkj\n jasdlfkj\n jasdlfkj\n jasdlfkj\n jasdlfkj"
         android:textAlignment="center"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Shape3"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/Shape3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
