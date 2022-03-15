@@ -1,5 +1,6 @@
 package com.example.centennialsiqtest;
 
+import android.util.Log;
 import android.widget.ImageView;
 
 import java.util.Random;
@@ -10,8 +11,33 @@ import java.util.concurrent.TimeUnit;
 
 public class Helper {
 
-    public int[] pattern = new int[50];
-    public int score = 0;
+    public static int[] pattern = new int[50];
+    public static int score = 0;
+    public static int hearts = 5;
+
+    public static boolean check(int n){
+        if(pattern[score]==n){
+            if(score==pattern.length-1){
+                //win
+            }
+            else
+                score++;
+            Log.d("myTag", "Correct"+score);
+            return true;
+        }
+        else {
+            //repeat
+            if(hearts==0){
+                score=0;
+                Log.d("myTag", "Die"+score);
+            }
+            else
+                hearts-=1;
+            Log.d("myTag", "Incorrect"+hearts);
+            return false;
+        }
+
+    }
 
     public int[] numbers(){
         Random rand = new Random();
