@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +18,7 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        Helper.numbers();
     }
     public void backc(View view){
         Intent i = new Intent(getApplicationContext(), MainActivity.class);
@@ -43,16 +45,63 @@ public class GameActivity extends AppCompatActivity {
             stockvisual.setVisibility(View.VISIBLE);
         stockvisual.setClickable(true);
     }
-    public void aClick(View view){
-        Helper.check(0);
+    public void aClick(View view) throws InterruptedException {
+
+        ImageView i1 = findViewById(R.id.Shape1);
+        ImageView i2 = findViewById(R.id.Shape2);
+        ImageView i3 = findViewById(R.id.Shape3);
+        ImageView i4 = findViewById(R.id.Shape4);
+        if(Helper.check(1) == false){
+            i1.setVisibility(View.INVISIBLE);
+            i2.setVisibility(View.INVISIBLE);
+            i3.setVisibility(View.INVISIBLE);
+            i4.setVisibility(View.INVISIBLE);
+            Helper.pattern(i1,i2,i3,i4);
+        }
+        final Handler handler2 = new Handler();
+        handler2.postDelayed(new Runnable() {
+            @Override
+            //Runs code in method run() after .5 seconds
+            public void run() {
+                i1.setVisibility(View.VISIBLE);
+                i2.setVisibility(View.VISIBLE);
+                i3.setVisibility(View.VISIBLE);
+                i4.setVisibility(View.VISIBLE);
+            }
+        }, 1000*(Helper.getScore()));
+
     }
-    public void bClick(View view){
-        Helper.check(1);
+    public void bClick(View view) throws InterruptedException {
+        ImageView i1 = findViewById(R.id.Shape1);
+        ImageView i2 = findViewById(R.id.Shape2);
+        ImageView i3 = findViewById(R.id.Shape3);
+        ImageView i4 = findViewById(R.id.Shape4);
+
+
+        if(Helper.check(1) == false){
+            Helper.pattern(i1,i2,i3,i4);
+        }
     }
-    public void cClick(View view){
-        Helper.check(2);
+    public void cClick(View view) throws InterruptedException {
+        ImageView i1 = findViewById(R.id.Shape1);
+        ImageView i2 = findViewById(R.id.Shape2);
+        ImageView i3 = findViewById(R.id.Shape3);
+        ImageView i4 = findViewById(R.id.Shape4);
+
+
+        if(Helper.check(2) == false){
+            Helper.pattern(i1,i2,i3,i4);
+        }
     }
-    public void dClick(View view){
-        Helper.check(3);
+    public void dClick(View view) throws InterruptedException {
+        ImageView i1 = findViewById(R.id.Shape1);
+        ImageView i2 = findViewById(R.id.Shape2);
+        ImageView i3 = findViewById(R.id.Shape3);
+        ImageView i4 = findViewById(R.id.Shape4);
+
+
+        if(Helper.check(3) == false){
+            Helper.pattern(i1,i2,i3,i4);
+        }
     }
 }
