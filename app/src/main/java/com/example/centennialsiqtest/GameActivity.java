@@ -1,8 +1,10 @@
 package com.example.centennialsiqtest;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -12,13 +14,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class GameActivity extends AppCompatActivity {
-
-
+    public int tempscore=0;
+    public int speed=(Helper.getSpeed())/2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         Helper.numbers();
+        updatetext();
+        final Handler handlestart = new Handler();
+        handlestart.postDelayed(new Runnable() {
+            @Override
+            //Runs code in method run() after .5 seconds
+            public void run() {
+                startpattern();
+            }
+        }, speed);
     }
     public void backc(View view){
         Intent i = new Intent(getApplicationContext(), MainActivity.class);
@@ -45,63 +56,100 @@ public class GameActivity extends AppCompatActivity {
             stockvisual.setVisibility(View.VISIBLE);
         stockvisual.setClickable(true);
     }
-    public void aClick(View view) throws InterruptedException {
+    public void Repeat(View view){
+        startpattern();
 
-        ImageView i1 = findViewById(R.id.Shape1);
-        ImageView i2 = findViewById(R.id.Shape2);
-        ImageView i3 = findViewById(R.id.Shape3);
-        ImageView i4 = findViewById(R.id.Shape4);
-        if(Helper.check(1) == false){
-            i1.setVisibility(View.INVISIBLE);
-            i2.setVisibility(View.INVISIBLE);
-            i3.setVisibility(View.INVISIBLE);
-            i4.setVisibility(View.INVISIBLE);
-            Helper.pattern(i1,i2,i3,i4);
+    }
+    public void aClick(View view) throws InterruptedException {
+        if(Helper.check(0) == false){
+            redflash();
+            startpattern();
         }
-        final Handler handler2 = new Handler();
-        handler2.postDelayed(new Runnable() {
-            @Override
-            //Runs code in method run() after .5 seconds
-            public void run() {
-                i1.setVisibility(View.VISIBLE);
-                i2.setVisibility(View.VISIBLE);
-                i3.setVisibility(View.VISIBLE);
-                i4.setVisibility(View.VISIBLE);
-            }
-        }, 1000*(Helper.getScore()));
+        else
+            checkscore();
+        updatetext();
 
     }
     public void bClick(View view) throws InterruptedException {
-        ImageView i1 = findViewById(R.id.Shape1);
-        ImageView i2 = findViewById(R.id.Shape2);
-        ImageView i3 = findViewById(R.id.Shape3);
-        ImageView i4 = findViewById(R.id.Shape4);
-
-
+        checkscore();
         if(Helper.check(1) == false){
-            Helper.pattern(i1,i2,i3,i4);
+            redflash();
+            startpattern();
         }
+        else
+            checkscore();
+        updatetext();
     }
     public void cClick(View view) throws InterruptedException {
-        ImageView i1 = findViewById(R.id.Shape1);
-        ImageView i2 = findViewById(R.id.Shape2);
-        ImageView i3 = findViewById(R.id.Shape3);
-        ImageView i4 = findViewById(R.id.Shape4);
-
-
         if(Helper.check(2) == false){
-            Helper.pattern(i1,i2,i3,i4);
+            redflash();
+            startpattern();
         }
+        else
+            checkscore();
+        updatetext();
     }
     public void dClick(View view) throws InterruptedException {
+        if(Helper.check(3) == false){
+            redflash();
+            startpattern();
+        }
+        else
+            checkscore();
+        updatetext();
+    }
+
+    public void checkscore(){
+        if(Helper.getScore()>tempscore){
+            startpattern();
+            tempscore=Helper.getScore();
+            greenflash();
+        }
+    }
+    public void startpattern(){
         ImageView i1 = findViewById(R.id.Shape1);
         ImageView i2 = findViewById(R.id.Shape2);
         ImageView i3 = findViewById(R.id.Shape3);
         ImageView i4 = findViewById(R.id.Shape4);
-
-
-        if(Helper.check(3) == false){
-            Helper.pattern(i1,i2,i3,i4);
+        Helper.pattern(i1,i2,i3,i4);
+    }
+    public void updatetext(){
+        TextView t1 = findViewById(R.id.patternnumber);
+        TextView t2 = findViewById(R.id.CurrentScoret);
+        if(Helper.getpatternlength()==0){
+            t1.setText(String.format("Pattern Number: %d/%d",Helper.getOrder(),Helper.getpatternlength()+1));
         }
+        else
+            t1.setText(String.format("Pattern Number: %d/%d",Helper.getOrder(),Helper.getpatternlength()));
+        t2.setText(String.format("Current Score: %d",Helper.getScore()));
+
+        TextView t3 = findViewById(R.id.highscore);
+        TextView t4 = findViewById(R.id.lives);
+        t3.setText(String.format("Highscore: %d",Helper.getHighScore()));
+        t4.setText(String.format("Lives: %d",Helper.getLives()));
+    }
+    public void redflash(){
+        ConstraintLayout c = findViewById(R.id.bg);
+        c.setBackgroundColor(Color.RED);
+        final Handler handlerend = new Handler();
+        handlerend.postDelayed(new Runnable() {
+            @Override
+            //Runs code in method run() after .5 seconds
+            public void run() {
+                c.setBackgroundColor(Color.WHITE);
+            }
+        }, speed);
+    }
+    public void greenflash(){
+        ConstraintLayout c = findViewById(R.id.bg);
+        c.setBackgroundColor(Color.GREEN);
+        final Handler handlerend = new Handler();
+        handlerend.postDelayed(new Runnable() {
+            @Override
+            //Runs code in method run() after .5 seconds
+            public void run() {
+                c.setBackgroundColor(Color.WHITE);
+            }
+        }, speed);
     }
 }
