@@ -6,7 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Switch;
+import android.widget.TextView;
 
 public class Settings extends AppCompatActivity {
 
@@ -26,5 +29,19 @@ public class Settings extends AppCompatActivity {
     public void backd(View view){
         Intent i = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(i);
+    }
+    public void music(View view){
+
+    }
+    public void slow(View view){
+        Helper.setSpeed(1000);
+        Helper.reset();
+    }
+    public void fast(View view){
+        Helper.setSpeed(500);
+        Helper.reset();
+    }
+    public void stockswitch(View view){
+
     }
 }

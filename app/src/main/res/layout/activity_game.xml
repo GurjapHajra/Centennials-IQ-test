@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/bg"
     tools:context=".GameActivity">
 
     <TextView
@@ -19,12 +20,33 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/HighScoret"
+        android:id="@+id/highscore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="High Score: 0"
+        app:layout_constraintBottom_toTopOf="@+id/CurrentScoret"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lives"
+        app:layout_constraintTop_toBottomOf="@+id/GameTitle" />
+
+    <TextView
+        android:id="@+id/lives"
+        android:layout_width="53dp"
+        android:layout_height="16dp"
+        android:text="Lives: 0"
+        app:layout_constraintBottom_toTopOf="@+id/patternnumber"
+        app:layout_constraintEnd_toStartOf="@+id/highscore"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GameTitle"
+        app:layout_constraintVertical_bias="0.625" />
+
+    <TextView
+        android:id="@+id/patternnumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="High Score: 9"
+        android:layout_marginTop="32dp"
+        android:text="Pattern Number: 0"
         app:layout_constraintEnd_toStartOf="@+id/CurrentScoret"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,12 +56,12 @@
         android:id="@+id/CurrentScoret"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:text="Current Score: 5"
+        android:text="Current Score: 0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/HighScoret"
+        app:layout_constraintStart_toEndOf="@+id/patternnumber"
         app:layout_constraintTop_toBottomOf="@+id/GameTitle" />
 
     <ImageView
@@ -47,50 +69,56 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:onClick="aClick"
         app:layout_constraintEnd_toStartOf="@+id/Shape2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HighScoret"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/patternnumber"
+        android:src="@drawable/circle"  />
 
     <ImageView
         android:id="@+id/Shape2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:onClick="bClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Shape1"
         app:layout_constraintTop_toBottomOf="@+id/CurrentScoret"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="@drawable/circle"  />
 
     <ImageView
         android:id="@+id/Shape4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:onClick="dClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Shape3"
         app:layout_constraintTop_toBottomOf="@+id/Shape2"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="@drawable/circle"   />
 
     <ImageView
         android:id="@+id/Shape3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:onClick="cClick"
         app:layout_constraintEnd_toStartOf="@+id/Shape4"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Shape1"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="@drawable/circle"   />
+
 
     <Button
         android:id="@+id/Repeatb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:onClick="Repeat"
         android:text="Repeat Pattern"
         app:layout_constraintEnd_toStartOf="@+id/Instb"
         app:layout_constraintHorizontal_bias="0.5"
@@ -147,4 +175,5 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Shape3" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
