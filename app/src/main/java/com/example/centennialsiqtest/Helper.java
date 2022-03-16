@@ -46,7 +46,7 @@ public class Helper {
             return true;
         }
         else{
-            if(hearts==0){
+            if(hearts==1){
                 if(highscore<score){
                     highscore=score;
                 }
