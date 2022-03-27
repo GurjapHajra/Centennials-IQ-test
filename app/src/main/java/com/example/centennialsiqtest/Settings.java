@@ -1,7 +1,9 @@
 package com.example.centennialsiqtest;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.SyncStateContract;
@@ -13,18 +15,11 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 public class Settings extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        Spinner dropdown = (Spinner) findViewById(R.id.Dropdown);
-
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(Settings.this,
-                android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.schemes));
-        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        dropdown.setAdapter(myAdapter);
         Switch music = (Switch) findViewById(R.id.MusicSwitch);
 
         if(Helper.musics==true){
@@ -51,6 +46,7 @@ public class Settings extends AppCompatActivity {
             Helper.musics = true;
         }
     }
+
     public void slow(View view){
         Helper.setSpeed(1000);
         Helper.reset();
@@ -66,4 +62,13 @@ public class Settings extends AppCompatActivity {
             Helper.stocks = true;
         }
     }
+
+    public void basicc(View veiw){
+
+    }
+
+    public void otherc(View veiw){
+
+    }
+
 }

@@ -151,7 +151,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             //Runs code in method run() after .5 seconds
             public void run() {
-                c.setBackgroundColor(Color.WHITE);
+                c.setBackgroundColor(getResources().getColor(R.color.t1blue));
             }
         }, speed);
     }
@@ -163,7 +163,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             //Runs code in method run() after .5 seconds
             public void run() {
-                c.setBackgroundColor(Color.WHITE);
+                c.setBackgroundColor(getResources().getColor(R.color.t1blue));
             }
         }, speed);
     }

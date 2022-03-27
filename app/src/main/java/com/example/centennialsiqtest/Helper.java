@@ -17,7 +17,7 @@ public class Helper {
     public static int[] checkpattern;
     public static int highscore=0;
     public static int ms=1000;
-    public static boolean musics = false;
+    public static boolean musics = true;
     public static boolean stocks = true;
 
     public static boolean check(int n){
