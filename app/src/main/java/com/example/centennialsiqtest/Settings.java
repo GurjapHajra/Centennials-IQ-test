@@ -24,14 +24,20 @@ public class Settings extends AppCompatActivity {
                 android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.schemes));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dropdown.setAdapter(myAdapter);
+        Switch music = (Switch) findViewById(R.id.MusicSwitch);
+
+        if(Helper.musics==true){
+            music.setChecked(true);
+        }else{
+            music.setChecked(false);
+        }
 
     }
     public void backd(View view){
-        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(i);
+        finish();
     }
     public void music(View view){
-
+        Helper.musics = false;
     }
     public void slow(View view){
         Helper.setSpeed(1000);

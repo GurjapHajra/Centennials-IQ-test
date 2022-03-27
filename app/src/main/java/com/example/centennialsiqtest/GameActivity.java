@@ -5,6 +5,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 public class GameActivity extends AppCompatActivity {
     public int tempscore=0;
     public int speed=(Helper.getSpeed())/2;
+    MediaPlayer music = new MediaPlayer();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,10 +34,16 @@ public class GameActivity extends AppCompatActivity {
                 startpattern();
             }
         }, speed);
+
+        if (Helper.musics == true){
+            music = MediaPlayer.create(GameActivity.this, R.raw.precarious);
+            music.start();
+        }
+
     }
     public void backc(View view){
-        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(i);
+        finish();
+        music.stop();
     }
     public void instructionsc(View view){
         Intent i = new Intent(getApplicationContext(), Instructions.class);

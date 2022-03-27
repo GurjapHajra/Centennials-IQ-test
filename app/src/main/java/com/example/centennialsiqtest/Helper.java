@@ -2,6 +2,7 @@ package com.example.centennialsiqtest;
 
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.util.Log;
@@ -26,6 +27,7 @@ public class Helper {
     public static int[] checkpattern;
     public static int highscore=0;
     public static int ms=1000;
+    public static boolean musics = true;
 
     public static boolean check(int n){
         checkpattern = new int[score+1];
