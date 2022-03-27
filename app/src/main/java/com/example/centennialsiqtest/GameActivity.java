@@ -40,6 +40,11 @@ public class GameActivity extends AppCompatActivity {
             music.start();
         }
 
+        if(Helper.stocks == false){
+            TextView sto = (TextView)  findViewById(R.id.Stockb);
+            sto.setClickable(false);
+        }
+
     }
     public void backc(View view){
         finish();

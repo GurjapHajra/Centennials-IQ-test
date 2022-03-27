@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.SyncStateContract;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -32,12 +33,23 @@ public class Settings extends AppCompatActivity {
             music.setChecked(false);
         }
 
+        Switch sto = (Switch) findViewById(R.id.StockSwitch);
+        if(Helper.stocks==true){
+            sto.setChecked(true);
+        }else{
+            sto.setChecked(false);
+        }
+
     }
     public void backd(View view){
         finish();
     }
     public void music(View view){
-        Helper.musics = false;
+        if(Helper.musics == true) {
+            Helper.musics = false;
+        }else{
+            Helper.musics = true;
+        }
     }
     public void slow(View view){
         Helper.setSpeed(1000);
@@ -48,6 +60,10 @@ public class Settings extends AppCompatActivity {
         Helper.reset();
     }
     public void stockswitch(View view){
-
+        if(Helper.stocks == true){
+            Helper.stocks = false;
+        }else{
+            Helper.stocks = true;
+        }
     }
 }
