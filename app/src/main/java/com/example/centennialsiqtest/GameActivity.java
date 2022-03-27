@@ -145,7 +145,7 @@ public class GameActivity extends AppCompatActivity {
     }
     public void redflash(){
         ConstraintLayout c = findViewById(R.id.bg);
-        c.setBackgroundColor(Color.RED);
+        c.setBackgroundColor(getResources().getColor(R.color.t1red));
         final Handler handlerend = new Handler();
         handlerend.postDelayed(new Runnable() {
             @Override
@@ -157,7 +157,7 @@ public class GameActivity extends AppCompatActivity {
     }
     public void greenflash(){
         ConstraintLayout c = findViewById(R.id.bg);
-        c.setBackgroundColor(Color.GREEN);
+        c.setBackgroundColor(getResources().getColor(R.color.t1green));
         final Handler handlerend = new Handler();
         handlerend.postDelayed(new Runnable() {
             @Override
