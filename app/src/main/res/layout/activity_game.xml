@@ -66,8 +66,8 @@
 
     <ImageView
         android:id="@+id/Shape1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="32dp"
         android:onClick="aClick"
         app:layout_constraintEnd_toStartOf="@+id/Shape2"
@@ -78,39 +78,39 @@
 
     <ImageView
         android:id="@+id/Shape2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="32dp"
         android:onClick="bClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Shape1"
         app:layout_constraintTop_toBottomOf="@+id/CurrentScoret"
-        android:src="@drawable/circle"  />
+        android:src="@drawable/square"  />
 
     <ImageView
         android:id="@+id/Shape4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="32dp"
         android:onClick="dClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Shape3"
         app:layout_constraintTop_toBottomOf="@+id/Shape2"
-        android:src="@drawable/circle"   />
+        android:src="@drawable/star"   />
 
     <ImageView
         android:id="@+id/Shape3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="32dp"
         android:onClick="cClick"
         app:layout_constraintEnd_toStartOf="@+id/Shape4"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Shape1"
-        android:src="@drawable/circle"   />
+        android:src="@drawable/triangle"   />
 
 
     <Button
@@ -164,16 +164,17 @@
 
     <TextView
         android:id="@+id/StockInfo"
-        android:layout_width="232dp"
-        android:layout_height="124dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="270dp"
+        android:layout_height="230dp"
         android:onClick="stockinfob"
         android:text="Stocks: \n jasdlfkj\n jasdlfkj\n jasdlfkj\n jasdlfkj\n jasdlfkj"
+        android:background="#808080"
         android:textAlignment="center"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Shape3" />
+        app:layout_constraintTop_toBottomOf="@+id/GameTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
