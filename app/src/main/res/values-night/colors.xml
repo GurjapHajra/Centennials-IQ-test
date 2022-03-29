@@ -8,11 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="t1red">#14110F</color>
-    <color name="t1yellow">#34312D</color>
-    <color name="t1orange">#7E7F83</color>
-    <color name="t1blue">#D9C5B2</color>
-    <color name="t1darkred">#F3F3F4</color>
+    <color name="t1red">#ef626c</color>
+    <color name="t1yellow">#f6e8ea</color>
+    <color name="t1orange">#312f2f</color>
+    <color name="t1blue">#84dccf</color>
+    <color name="t1darkred">#22181c</color>
     <color name="t1green">#90ee90</color>
     
 </resources>
