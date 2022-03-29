@@ -3,6 +3,8 @@ package com.example.centennialsiqtest;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
@@ -10,6 +12,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -115,7 +118,12 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void checkscore(){
-        if(Helper.getScore()>tempscore){
+        if(Helper.getScore()==Helper.getfinalpatternlength()){
+            Helper.reset();
+            ViewDialog alert = new ViewDialog();
+            alert.showDialog(GameActivity.this, "You won! Congratulations!");
+        }
+        else if(Helper.getScore()>tempscore){
             startpattern();
             tempscore=Helper.getScore();
             greenflash();
@@ -166,5 +174,28 @@ public class GameActivity extends AppCompatActivity {
                 c.setBackgroundColor(getResources().getColor(R.color.t1blue));
             }
         }, speed);
+    }
+    public class ViewDialog {
+        public void showDialog(Activity activity, String msg){
+            final Dialog dialog = new Dialog(activity);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setCancelable(false);
+            dialog.setContentView(R.layout.win);
+
+            TextView text = (TextView) dialog.findViewById(R.id.text_dialog);
+            text.setText(msg);
+
+            Button dialogButton = (Button) dialog.findViewById(R.id.btn_dialog);
+            dialogButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.dismiss();
+                    finish();
+                }
+            });
+
+            dialog.show();
+
+        }
     }
 }

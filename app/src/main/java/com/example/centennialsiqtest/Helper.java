@@ -63,7 +63,7 @@ public class Helper {
 
     public static int[] numbers(){
         Random rand = new Random();
-        for (int i = 0; i < 50; i++){
+        for (int i = 0; i < pattern.length; i++){
             int x = rand.nextInt(4);
             pattern[i] = x;
         }
@@ -74,6 +74,9 @@ public class Helper {
     }
     public static int getOrder(){
         return order;
+    }
+    public static int getfinalpatternlength(){
+        return pattern.length;
     }
     public static int getpatternlength(){
         if(checkpattern==null){
