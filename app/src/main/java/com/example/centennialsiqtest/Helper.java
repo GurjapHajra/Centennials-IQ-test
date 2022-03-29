@@ -31,11 +31,9 @@ public class Helper {
                 score++;
                 order=0;
                 checkpattern = new int[score+1];
-                Log.d("myTag", "Correct, Adding one more object to the next sequence"+score);
             }
             else {
                 order++;
-                Log.d("myTag", "Correct" + order);
             }
             return true;
         }
@@ -49,12 +47,10 @@ public class Helper {
                 order=0;
                 hearts=5;
                 numbers();
-                Log.d("myTag", "You died."+hearts);
             }
             else{
                 hearts-=1;
                 order=0;
-                Log.d("myTag", "Incorrect."+hearts);
             }
             return false;
         }
