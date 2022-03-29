@@ -1,6 +1,7 @@
 package com.example.centennialsiqtest;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
@@ -65,9 +66,11 @@ public class Settings extends AppCompatActivity {
 
     public void basicc(View veiw){
         Helper.colorScheme = 1;
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
     }
 
     public void otherc(View veiw){
         Helper.colorScheme = 2;
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
     }
 }
