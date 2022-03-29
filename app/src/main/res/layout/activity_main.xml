@@ -5,61 +5,91 @@
     android:id="@+id/insb"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background= "@color/t1darkred"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:text="Centennials IQ Test"
         android:textAlignment="center"
+        android:textColor="@color/t1yellow"
         android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/Playb"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/t1orange"
         android:onClick="playc"
         android:text="Play"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Insb"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Title" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/Insb"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Instructions"
+        android:backgroundTint="@color/t1orange"
         android:onClick="instc"
+        android:text="Instructions"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Setb"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Playb" />
 
     <Button
         android:id="@+id/Setb"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Settings"
+        android:backgroundTint="@color/t1orange"
         android:onClick="settc"
+        android:text="Settings"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Quitb"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Insb" />
 
     <Button
         android:id="@+id/Quitb"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Quit"
+        android:backgroundTint="@color/t1orange"
         android:onClick="quitc"
+        android:text="Quit"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Setb" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.46" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="595dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,5 @@
 package com.example.centennialsiqtest;
 
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.os.CountDownTimer;
 import android.os.Handler;
 import android.util.Log;
 import android.widget.ImageView;
@@ -10,12 +7,6 @@ import android.widget.ImageView;
 import java.util.Random;
 
 import android.view.View;
-
-import androidx.constraintlayout.widget.ConstraintLayout;
-
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.TimeUnit;
 
 public class Helper {
 
@@ -26,6 +17,8 @@ public class Helper {
     public static int[] checkpattern;
     public static int highscore=0;
     public static int ms=1000;
+    public static boolean musics = true;
+    public static boolean stocks = true;
 
     public static boolean check(int n){
         checkpattern = new int[score+1];
