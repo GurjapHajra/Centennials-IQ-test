@@ -14,5 +14,11 @@
     <color name="t1blue">#6699CC</color>
     <color name="t1darkred">#A23E48</color>
     <color name="t1green">#90ee90</color>
-
+    
+    <color name="t2red">#14110F</color>
+    <color name="t2brown">#34312D</color>
+    <color name="t2gray">#7E7F83</color>
+    <color name="t2sand">#D9C5B2</color>
+    <color name="t2white">#F3F3F4</color>
+    
 </resources>

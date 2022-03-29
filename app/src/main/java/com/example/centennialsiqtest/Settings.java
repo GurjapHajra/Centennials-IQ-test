@@ -64,11 +64,10 @@ public class Settings extends AppCompatActivity {
     }
 
     public void basicc(View veiw){
-
+        Helper.colorScheme = 1;
     }
 
     public void otherc(View veiw){
-
+        Helper.colorScheme = 2;
     }
-
 }

@@ -19,6 +19,7 @@ public class Helper {
     public static int ms=1000;
     public static boolean musics = true;
     public static boolean stocks = true;
+    public static int colorScheme = 1;
 
     public static boolean check(int n){
         checkpattern = new int[score+1];
