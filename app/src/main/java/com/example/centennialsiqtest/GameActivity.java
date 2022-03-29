@@ -17,6 +17,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.IOException;
+
 public class GameActivity extends AppCompatActivity {
     public int tempscore=0;
     public int speed=(Helper.getSpeed())/2;
@@ -64,14 +66,16 @@ public class GameActivity extends AppCompatActivity {
             stockvisual.setClickable(false);
         }
     }
-    public void stockc(View view){
+    public void stockc(View view) throws IOException {
         TextView stockvisual = (TextView) findViewById(R.id.StockInfo);
         if(stockvisual.getVisibility()==View.VISIBLE){
             stockvisual.setVisibility(View.INVISIBLE);
             stockvisual.setClickable(false);
         }
-        else
+        else {
+            stockvisual.setText(Helper.stockinfo());
             stockvisual.setVisibility(View.VISIBLE);
+        }
         stockvisual.setClickable(true);
     }
     public void Repeat(View view){
