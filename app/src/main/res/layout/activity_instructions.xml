@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/t1yellow"
     tools:context=".Instructions">
 
     <TextView
@@ -13,38 +14,48 @@
         android:layout_marginTop="32dp"
         android:text="Instructions"
         android:textSize="34sp"
+        android:textColor="@color/t1blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="177dp"
-        android:layout_height="220dp"
+        android:layout_width="180dp"
+        android:layout_height="240dp"
         android:layout_marginTop="32dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/game"
         app:layout_constraintEnd_toStartOf="@+id/textView2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/InsTitle"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/InsTitle" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="168dp"
-        android:layout_height="220dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="180dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="24dp"
+        android:scaleType="fitEnd"
+        android:src="@drawable/setting"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="181dp"
-        android:layout_height="221dp"
+        android:layout_width="180dp"
+        android:layout_height="240dp"
         android:layout_marginTop="32dp"
-        android:text="lajfdslkajsd faksdjflka sdjfl asjdf lkasdj lfkkj asldf jasldfjk alsdj flaksdjf"
+        android:text="Memorize the sequence of shapes that light up, then press them in order.
+\n\nEvery time you finish the pattern, it gets longer.
+\n\nMake a mistake, and you lose a life. You have a total of 5 lives.
+\n\nTo win you need a score of 25.
+\n\nYou can look at the current stock market values by clicking the stock button.
+\n\nYou can click on the repeat pattern button to review the sequence"
+        android:textColor="@color/t1red"
+        android:textSize="11dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imageView"
@@ -52,10 +63,16 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="181dp"
-        android:layout_height="221dp"
-        android:layout_marginTop="32dp"
-        android:text="lajfdslkajsd faksdjflka sdjfl asjdf lkasdj lfkkj asldf jasldfjk alsdj flaksdjf"
+        android:layout_width="180dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="24dp"
+        android:text="You can change different attributes of the game through settings.
+\n\nThe music switch turns on or off music(on by default).
+\n\nThe highlight speed controls the speed at which each shape is highlighted(slow by default).
+\n\nThe stock swtich allows you to disable the stock button(on by default).
+\n\nYou can change between light and dark mode through color scheme."
+        android:textColor="@color/t1red"
+        android:textSize="11dp"
         app:layout_constraintEnd_toStartOf="@+id/imageView2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,6 +85,7 @@
         android:layout_marginTop="32dp"
         android:text="Back"
         android:onClick="backc"
+        android:backgroundTint="@color/t1orange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
