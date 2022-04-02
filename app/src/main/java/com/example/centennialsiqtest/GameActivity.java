@@ -64,7 +64,7 @@ public class GameActivity extends AppCompatActivity {
         String netflix;
         String amazon;
         String alphabet;
-        String td;
+        String nvidia;
         @Override
         protected Void doInBackground(Void... voids) {
 
@@ -81,6 +81,9 @@ public class GameActivity extends AppCompatActivity {
                 amazon = doc.text();
                 doc = Jsoup.connect("https://www.google.com/finance/quote/GOOGL:NASDAQ?hl=en").get();
                 alphabet = doc.text();
+                doc = Jsoup.connect("https://www.google.com/finance/quote/NVDA:NASDAQ?hl=en").get();
+                nvidia = doc.text();
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -93,7 +96,7 @@ public class GameActivity extends AppCompatActivity {
             super.onPostExecute(aVoid);
             TextView stockvisual = (TextView) findViewById(R.id.StockInfo);
 
-            String ans = "Stock Prices:\nApple:\t\t"+Helper.StringToStock(apple)+"\n"+"tesla:\t\t"+Helper.StringToStock(tesla)+"\n"+"Microsoft:\t\t"+Helper.StringToStock(micro)+"\n"+"Netflix:\t\t"+Helper.StringToStock(netflix)+"\n"+"Amazon:\t\t"+Helper.StringToStock(amazon)+"\n"+"Alphabet:\t\t"+Helper.StringToStock(alphabet);
+            String ans = "Stock Prices:\nApple:\t\t"+Helper.StringToStock(apple)+"\n"+"tesla:\t\t"+Helper.StringToStock(tesla)+"\n"+"Microsoft:\t\t"+Helper.StringToStock(micro)+"\n"+"Netflix:\t\t"+Helper.StringToStock(netflix)+"\n"+"Amazon:\t\t"+Helper.StringToStock(amazon)+"\n"+"Alphabet:\t\t"+Helper.StringToStock(alphabet)+"\n"+"Nvidia:\t\t"+Helper.StringToStock(nvidia);
 
             stockvisual.setText(ans);
         }
