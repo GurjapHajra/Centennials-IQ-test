@@ -126,8 +126,6 @@ public class GameActivity extends AppCompatActivity {
         else {
 
             new doit().execute();
-
-            //stockvisual.setText(Helper.stockinfo());
             stockvisual.setVisibility(View.VISIBLE);
         }
         stockvisual.setClickable(true);
