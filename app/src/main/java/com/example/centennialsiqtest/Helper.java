@@ -122,7 +122,6 @@ public class Helper {
 
     public static String StringToStock(String line){
         int ind = line.indexOf("After Hours");
-        Log.d("mylog",line);
         String sub = line.substring(ind-10,ind);
 
         int index = sub.indexOf("$");
