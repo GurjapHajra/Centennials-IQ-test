@@ -1,110 +1,136 @@
 package com.example.centennialsiqtest;
 
+import android.os.AsyncTask;
 import android.os.Handler;
 import android.util.Log;
 import android.widget.ImageView;
 
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.annotation.Documented;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.Random;
 
 import android.view.View;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
 public class Helper {
 
     public static int[] pattern = new int[50];//Full 50 steps pattern
-    public static int score =0; //Score to check which
+    public static int score = 0; //Score to check which
     public static int hearts = 5;
-    public static int order=0;
+    public static int order = 0;
     public static int[] checkpattern;
-    public static int highscore=0;
-    public static int ms=1000;
+    public static int highscore = 0;
+    public static int ms = 1000;
     public static boolean musics = true;
     public static boolean stocks = true;
     public static int colorScheme = 1;
 
-    public static boolean check(int n){
-        checkpattern = new int[score+1];
-        for(int i=0;i<checkpattern.length;i++){
-            checkpattern[i]=pattern[i];
+    public static boolean check(int n) {
+        checkpattern = new int[score + 1];
+        for (int i = 0; i < checkpattern.length; i++) {
+            checkpattern[i] = pattern[i];
         }
-        if(checkpattern[order]==n){
-            if(order== checkpattern.length-1){
+        if (checkpattern[order] == n) {
+            if (order == checkpattern.length - 1) {
                 score++;
-                order=0;
-                checkpattern = new int[score+1];
-            }
-            else {
+                order = 0;
+                checkpattern = new int[score + 1];
+            } else {
                 order++;
             }
             return true;
-        }
-        else{
-            if(hearts==1){
-                if(highscore<score){
-                    highscore=score;
+        } else {
+            if (hearts == 1) {
+                if (highscore < score) {
+                    highscore = score;
                 }
                 checkpattern = new int[0];
-                score=0;
-                order=0;
-                hearts=5;
+                score = 0;
+                order = 0;
+                hearts = 5;
                 numbers();
-            }
-            else{
-                hearts-=1;
-                order=0;
+            } else {
+                hearts -= 1;
+                order = 0;
             }
             return false;
         }
 
     }
 
-    public static int[] numbers(){
+    public static int[] numbers() {
         Random rand = new Random();
-        for (int i = 0; i < pattern.length; i++){
+        for (int i = 0; i < pattern.length; i++) {
             int x = rand.nextInt(4);
             pattern[i] = x;
         }
         return pattern;
     }
-    public static int getScore(){
+
+    public static int getScore() {
         return score;
     }
-    public static int getOrder(){
+
+    public static int getOrder() {
         return order;
     }
-    public static int getfinalpatternlength(){
+
+    public static int getfinalpatternlength() {
         return pattern.length;
     }
-    public static int getpatternlength(){
-        if(checkpattern==null){
+
+    public static int getpatternlength() {
+        if (checkpattern == null) {
             return 0;
-        }
-        else
+        } else
             return checkpattern.length;
     }
-    public static int getLives(){
+
+    public static int getLives() {
         return hearts;
     }
-    public static int getHighScore(){
+
+    public static int getHighScore() {
         return highscore;
     }
-    public static int getSpeed(){
+
+    public static int getSpeed() {
         return ms;
     }
-    public static void setSpeed(int speed){
-        ms=speed;
+
+    public static void setSpeed(int speed) {
+        ms = speed;
     }
-    public static void reset(){
-        if(highscore<score){
-            highscore=score;
+
+    public static void reset() {
+        if (highscore < score) {
+            highscore = score;
         }
         checkpattern = new int[0];
-        score=0;
-        order=0;
-        hearts=5;
+        score = 0;
+        order = 0;
+        hearts = 5;
         numbers();
     }
 
+    public static String StringToStock(String line){
+        int ind = line.indexOf("After Hours");
+        Log.d("mylog",line);
+        String sub = line.substring(ind-10,ind);
 
+        int index = sub.indexOf("$");
+
+        String result = sub.substring(index);
+
+        return result;
+    }
 
     public static void pattern(ImageView b0, ImageView b1, ImageView b2, ImageView b3) {
         int ms2= ms;

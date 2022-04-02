@@ -8,6 +8,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -16,6 +17,11 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+import java.io.IOException;
 
 public class GameActivity extends AppCompatActivity {
     public int tempscore=0;
@@ -47,8 +53,58 @@ public class GameActivity extends AppCompatActivity {
             TextView sto = (TextView)  findViewById(R.id.Stockb);
             sto.setClickable(false);
         }
-
     }
+
+    // stock
+
+    public class doit extends AsyncTask<Void, Void, Void> {
+        String apple;
+        String tesla;
+        String micro;
+        String netflix;
+        String amazon;
+        String alphabet;
+        String nvidia;
+        @Override
+        protected Void doInBackground(Void... voids) {
+
+            try {
+                Document doc = Jsoup.connect("https://www.google.com/finance/quote/AAPL:NASDAQ?hl=en").get();
+                apple = doc.text();
+                doc = Jsoup.connect("https://www.google.com/finance/quote/TSLA:NASDAQ?hl=en").get();
+                tesla = doc.text();
+                doc = Jsoup.connect("https://www.google.com/finance/quote/MSFT:NASDAQ?hl=en").get();
+                micro = doc.text();
+                doc = Jsoup.connect("https://www.google.com/finance/quote/NFLX:NASDAQ?hl=en").get();
+                netflix = doc.text();
+                doc = Jsoup.connect("https://www.google.com/finance/quote/AMZN:NASDAQ?hl=en").get();
+                amazon = doc.text();
+                doc = Jsoup.connect("https://www.google.com/finance/quote/GOOGL:NASDAQ?hl=en").get();
+                alphabet = doc.text();
+                doc = Jsoup.connect("https://www.google.com/finance/quote/NVDA:NASDAQ?hl=en").get();
+                nvidia = doc.text();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            TextView stockvisual = (TextView) findViewById(R.id.StockInfo);
+
+            String ans = "Stock Prices:\nApple:\t\t"+Helper.StringToStock(apple)+"\n"+"tesla:\t\t"+Helper.StringToStock(tesla)+"\n"+"Microsoft:\t\t"+Helper.StringToStock(micro)+"\n"+"Netflix:\t\t"+Helper.StringToStock(netflix)+"\n"+"Amazon:\t\t"+Helper.StringToStock(amazon)+"\n"+"Alphabet:\t\t"+Helper.StringToStock(alphabet)+"\n"+"Nvidia:\t\t"+Helper.StringToStock(nvidia);
+
+            stockvisual.setText(ans);
+        }
+    }
+
+
+    //stock end
+
     public void backc(View view){
         finish();
         music.stop();
@@ -64,14 +120,17 @@ public class GameActivity extends AppCompatActivity {
             stockvisual.setClickable(false);
         }
     }
-    public void stockc(View view){
+    public void stockc(View view) throws IOException {
         TextView stockvisual = (TextView) findViewById(R.id.StockInfo);
         if(stockvisual.getVisibility()==View.VISIBLE){
             stockvisual.setVisibility(View.INVISIBLE);
             stockvisual.setClickable(false);
         }
-        else
+        else {
+
+            new doit().execute();
             stockvisual.setVisibility(View.VISIBLE);
+        }
         stockvisual.setClickable(true);
     }
     public void Repeat(View view){

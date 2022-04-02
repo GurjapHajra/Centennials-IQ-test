@@ -178,7 +178,7 @@
         android:layout_height="230dp"
         android:background="@color/t1darkred"
         android:onClick="stockinfob"
-        android:text="Stocks: \n jasdlfkj\n jasdlfkj\n jasdlfkj\n jasdlfkj\n jasdlfkj"
+        android:text="Stocks: \n loading..."
         android:textAlignment="center"
         android:textColor="@color/t1yellow"
         android:textSize="20sp"
