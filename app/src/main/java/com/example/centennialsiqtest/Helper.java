@@ -62,7 +62,6 @@ public class Helper {
             }
             return false;
         }
-
     }
 
     public static int[] numbers() {
